@@ -1,0 +1,35 @@
+// BuildingGame/app/build.gradle
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.building.game'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.building.game"
+        minSdk 24
+        targetSdk 34
+        versionCode 10
+        versionName "build10testing"  // ← ИЗМЕНЕНО
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'org.jmonkeyengine:jme3-android:3.6.0-stable'
+    implementation 'org.jmonkeyengine:jme3-core:3.6.0-stable'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}
